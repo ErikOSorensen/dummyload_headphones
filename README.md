@@ -61,3 +61,28 @@ I would like:
 - Rotary encoder in front for manually choosing a load (push switch for choosing adjusting R or C).
 - A 16x2 LCD display for a) printing ip-address at boot time and b) one line for chosen R, one line for chosen C (and for indicating if the rotary encoder would change R or C). 
 
+# Design notes
+
+## How to divide the work
+
+
+- The Pi Pico probably belongs on a board together with the rotary encoder and the relay interface chips. This board would also have a lot of connectors:
+  - I2C and power to the display (4 pins).
+  - SPI and power to the ethernet adapter (6 pins).
+  - USB to the back.
+  - IDC connector to the relay board.
+- The relay board 
+  - An IDC connector from the controller board.
+  - An connector to the input jack on the front.
+- The front panel
+  - Input from amp, 1/4 inch.
+  - 2 x XLR out
+  - Wiring from amp in to XLR sense out.
+- The back panel
+  - The ethernet adapter needs to be fixed to the back panel
+  - A USB extension that can be routed to the Pi Pico on the controller board.
+
+## Programming the Pi Pico
+
+I would like to program the Pi Pico in Python. There are two Python dialects
+that are relevant. The Circuit Python from Adafruit and Micro Python (which Circuit Python is derived from). My experience is with the Circuit Python. 
