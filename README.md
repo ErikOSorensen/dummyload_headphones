@@ -42,3 +42,22 @@ number of relays. I could drive the relays with ULN2003LV chips, which
 conveniently interfaces the 3V3 logical output of the Pi Pico with 5V signal
 relays. Two such chips would be able to drive 14 relays, which is plenty (both
 relays and precision resistors are expensive). 
+
+If I have 5 resistor values (e.g. 25, 50, 100, 300, 600) I can easily cover with
+sufficient support by possibly paralleling two of the resistors.  For capacitors, I aim to cover a larger
+range of values, and I don't know how useful the paralleling would be. If I set aside a bank of relays for capacitance, I can easily cover the same
+range as *Neurochrome* with values 100pF, 200pF, 470pF, 1nF, 2nF, 4.7nF, and 10nF. 
+
+## Connections / interface
+
+I would like:
+
+- A power on/off on the front.
+- A stereo 1/4 inch jack for amp input. 
+- Two XLR sense outputs for connection to soundcard for analysis.
+- Two BNC sense outputs (paralleled to the XLRs).
+- USB in the back for power and programming access to the Raspberry Pi Pico.
+- Ethernet jack in the back for remote control.
+- Rotary encoder in front for manually choosing a load (push switch for choosing adjusting R or C).
+- A 16x2 LCD display for a) printing ip-address at boot time and b) one line for chosen R, one line for chosen C (and for indicating if the rotary encoder would change R or C). 
+
