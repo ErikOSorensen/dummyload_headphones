@@ -73,10 +73,11 @@ I would like:
   - IDC connector to the relay board.
 - The relay board 
   - An IDC connector from the controller board.
-  - An connector to the input jack on the front.
+  - A connector to the input jack on the front.
 - The front panel
   - Input from amp, 1/4 inch.
   - 2 x XLR out
+  - 2 x BNC (isolated, wired from the XLR and the input)
   - Wiring from amp in to XLR sense out.
 - The back panel
   - The ethernet adapter needs to be fixed to the back panel
