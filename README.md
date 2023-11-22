@@ -43,10 +43,13 @@ conveniently interfaces the 3V3 logical output of the Pi Pico with 5V signal
 relays. Two such chips would be able to drive 14 relays, which is plenty (both
 relays and precision resistors are expensive). 
 
-If I have 5 resistor values (e.g. 25, 50, 100, 300, 600) I can easily cover with
-sufficient support by possibly paralleling two of the resistors.  For capacitors, I aim to cover a larger
-range of values, and I don't know how useful the paralleling would be. If I set aside a bank of relays for capacitance, I can easily cover the same
-range as *Neurochrome* with values 100pF, 200pF, 470pF, 1nF, 2nF, 4.7nF, and 10nF. 
+If I have 3 resistor values I can easily cover with sufficient support by
+possibly paralleling two of the resistors. If the three are 50, 100, and 300, I
+can reach 23, 33, 43, 50, 75, 100, 300. This seems sufficient.  For capacitors,
+I aim to cover a larger range of values, and I don't know how useful the
+paralleling would be. If I set aside a bank of relays for capacitance, I can
+easily cover the same range as *Neurochrome* with values 100pF, 330pF, 1nF, 3.3nF, and 10nF. This would also make sure that
+I stay within one 8-bit word of instructions.
 
 ## Connections / interface
 
@@ -87,3 +90,20 @@ I would like:
 
 I would like to program the Pi Pico in Python. There are two Python dialects
 that are relevant. The Circuit Python from Adafruit and Micro Python (which Circuit Python is derived from). My experience is with the Circuit Python. 
+
+
+## Parts
+
+- The Kemet EC2-4.5NU relay is not super expensive at Mouser (18 kr when buying 25 or more). 
+- Precision power resistors: Caddock MP900 series are about 50 kr per piece in small quantities. These are 15W, 1% in a to-126 form factor. These are super nice (-20, +80 ppm/C), I need them in stereo. These would need to be heatsinkted
+to get anywhere close to the power handling capability *Neurochrome* claims (8W). With three per channel costs are reasonable.
+- I have some XLR (nice Neutrik) and BNC connectors (ebay) around.
+- I have 16x2 displays with I2C adapters.
+- I have some Pi Picos.
+- I have a couple of W5500 ethernet adapters.
+- I have at least one USB extension cord.
+- I have nice WIMA film capacitors.
+
+## Case
+
+- A Hammond 1402FV is about 900 kr at Mouser, at 3 x 7 x 10 inches. This has end plates that can be replaced by PCB for a nice front plate (which would be 176 x 74 mm).
